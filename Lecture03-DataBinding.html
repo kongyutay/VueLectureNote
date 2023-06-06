@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="style.css">
+		
+		<!-- Vue JS -->
+		
+		<script src="vue.js"></script>
+		
+	</head>
+	
+	<body>
+		<!-- Prepare a container -->
+		<div id="root">
+			单向数据绑定： <input type="text" v-bind:value="name"><br>
+			<!-- 当输入框有其他值时，并不会影响下面的data -->
+			
+			双向数据绑定： <input type="text" v-model:value="name"><br>
+			双向数据绑定： <input type="text" v-model="name">
+			<!-- 输入框也会影响下面的data, v-model default collect the data from 'value' attribute, so can ignore ':value'-->
+			
+			<!-- 
+			v-model不能乱乱用，only can use on the input element, such as 输入框，单选框，多选框， select，多行输入等等，with the 'value' attribute baru boleh. Other elements such as <h2>, it designed like that because they want to make interaction with user 
+			-->
+		</div>
+		
+		<script type="text/javascript">
+			Vue.config.productionTip = false
+			
+			new Vue({
+				el:'#root',
+				data:{
+					name:'default'
+			})
+		</script>
+	</body>
+</html>

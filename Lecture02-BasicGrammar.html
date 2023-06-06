@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="style.css">
+		
+		<!-- Vue JS -->
+		
+		<script src="vue.js"></script>
+		
+	</head>
+	
+	<body>
+		<!-- Prepare a container -->
+		<div id="root">
+			<h1>基本语法</h1>
+			
+			<h3>插值语法</h3>
+			<p>Hello {{name}}</p>
+			<!-- 插值语法通常用在标签内，必须是js表达式，且可以读取data的所有属性 -->
+			
+			<h3>指令语法</h3>
+			<a v-bind:href="searchEngine.google">Google</a><!--一般写法-->
+			<a :href="searchEngine.yahoo">Yahoo</a><!--shortHand写法-->
+			<a :href="searchEngine.baidu">Baidu</a>
+			<!-- 指令语法通常是为了解析标签，包括标签属性，标签内容，绑定事件等等，通常是v-xxx -->
+			
+			<!-- 
+			
+			**js表达式vsjs语法**
+			表达式
+			可以用某个变量去接它/可以返回某个值
+			a
+			a + b
+			demo(1)
+			x === y ? 'a' : 'b'
+			
+			js语法
+			逻辑语句
+			if(){}
+			for(){}
+			
+			-->
+			
+		</div>
+		
+		<script type="text/javascript">
+			Vue.config.productionTip = false
+			
+			new Vue({
+				el:'#root',
+				searchEngine: {
+					google:'www.google.com',
+					yahoo:'www.yahoo.com',
+					baidu:'www.baidu.com'
+				}
+			})
+		</script>
+	</body>
+</html>
